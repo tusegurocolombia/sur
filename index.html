@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gafas Solares</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        header {
+            background: linear-gradient(135deg, #ff8c00, #ff4500);
+            color: white;
+            padding: 20px 0;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        nav {
+            background: #333;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        .gafas-img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .productos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .producto {
+            width: 30%;
+            background: #fff;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .producto img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #ff4500;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+        .btn:hover {
+            background: #e03e00;
+        }
+        footer {
+            background: #333;
+            color: white;
+            padding: 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Gafas Solares - Estilo y Protección
+    </header>
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#productos">Productos</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="container">
+        <img class="gafas-img" src="https://via.placeholder.com/1000x400" alt="Gafas Solares">
+        <p>Las mejores gafas solares para protegerte del sol con estilo. Encuentra el par perfecto para cada ocasión.</p>
+        <a href="#productos" class="btn">Ver Colección</a>
+    </div>
+    <div class="container" id="productos">
+        <h2>Nuestros Productos</h2>
+        <div class="productos">
+            <div class="producto">
+                <img src="https://via.placeholder.com/300x200" alt="Gafas Modelo 1">
+                <p>Gafas modelo clásico con protección UV.</p>
+                <a href="#" class="btn">Comprar</a>
+            </div>
+            <div class="producto">
+                <img src="https://via.placeholder.com/300x200" alt="Gafas Modelo 2">
+                <p>Gafas deportivas ideales para exteriores.</p>
+                <a href="#" class="btn">Comprar</a>
+            </div>
+            <div class="producto">
+                <img src="https://via.placeholder.com/300x200" alt="Gafas Modelo 3">
+                <p>Gafas de lujo con diseño exclusivo.</p>
+                <a href="#" class="btn">Comprar</a>
+            </div>
+        </div>
+    </div>
+    <footer>
+        &copy; 2025 Gafas Solares. Todos los derechos reservados.
+    </footer>
+</body>
+</html>
