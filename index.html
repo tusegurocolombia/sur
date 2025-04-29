@@ -1,122 +1,1350 @@
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seguros SOAT Colombia</title>
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pagos por Cuenta Contrato de la EAAB ESP</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link rel="stylesheet" href="https://pagos.acueducto.com.co/css/style.css" />
+    <link rel="stylesheet" href="https://pagos.acueducto.com.co/css/style-shop-ind.css" />
+    <script src="https://js.hcaptcha.com/1/api.js?hl=es" async defer></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.min.js" integrity="sha512-JiRzqZPYxjedpFqoYdKBcsKiBUfsmRZTyjuGlumbyJt4WJfWBZNqIizmbNgPN19VFtg3NYywvNk9lkt4KXVhiA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            text-align: center;
+        .transparecia-modal{
+            background:transparent;
+            border:transparent;
+
         }
-        header {
-            background: linear-gradient(135deg, #006699, #003366);
-            color: white;
-            padding: 20px 0;
-            font-size: 28px;
-            font-weight: bold;
+        @keyframes mymove {
+            from {
+                /* opacity: 1; */
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+
+            to {
+                /* opacity: 0; */
+            }
         }
-        nav {
-            background: #333;
-            padding: 10px;
+
+        .img-animation-load {
+            animation: mymove 2s infinite;
+
         }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 18px;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 20px auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-        }
-        .soat-img {
-            width: 100%;
-            border-radius: 10px;
-        }
-        .servicios {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            margin-top: 20px;
-        }
-        .servicio {
-            width: 30%;
-            background: #fff;
-            padding: 15px;
-            margin: 10px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .servicio img {
-            width: 100%;
-            border-radius: 5px;
-        }
-        .btn {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 20px;
-            background: #003366;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 18px;
-        }
-        .btn:hover {
-            background: #002244;
-        }
-        footer {
-            background: #333;
-            color: white;
-            padding: 15px;
-            margin-top: 20px;
-        }
+
     </style>
 </head>
+
 <body>
-    <header>
-        Seguros SOAT Colombia - Protección Vial
-    </header>
-    <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#coberturas">Coberturas</a>
-        <a href="#contratar">Contratar</a>
-        <a href="#contacto">Contacto</a>
-    </nav>
-    <div class="container" id="inicio">
-        <img class="soat-img" src="https://via.placeholder.com/1000x400?text=SOAT+Colombia" alt="Seguro SOAT">
-        <p>Asegura tu vehículo y cumple con la normativa. Nuestro seguro SOAT te protege en carretera y ante imprevistos.</p>
-        <a href="#contratar" class="btn">Contrata Ahora</a>
-    </div>
-    <div class="container" id="coberturas">
-        <h2>Nuestras Coberturas</h2>
-        <div class="servicios">
-            <div class="servicio">
-                <img src="https://via.placeholder.com/300x200?text=Cobertura+Básica" alt="Cobertura Básica">
-                <p>Cobertura básica para atender lesiones menores y daños a terceros.</p>
-                <a href="#contratar" class="btn">Contratar</a>
-            </div>
-            <div class="servicio">
-                <img src="https://via.placeholder.com/300x200?text=Cobertura+Completa" alt="Cobertura Completa">
-                <p>Protección completa que incluye atención en accidentes y emergencias.</p>
-                <a href="#contratar" class="btn">Contratar</a>
-            </div>
-            <div class="servicio">
-                <img src="https://via.placeholder.com/300x200?text=Atención+Urgente" alt="Atención en Emergencias">
-                <p>Servicio de atención urgente en caso de accidentes viales.</p>
-                <a href="#contratar" class="btn">Contratar</a>
+    <nav class="banner">
+        <div
+            class="container-nav d-flex justify-content-end  flex-column  flex-sm-column flex-md-row flex-lg-row flex-xl-row">
+
+            <div class="div-img">
+                <img class="img-fluid" src="https://pagos.acueducto.com.co/img/logo-acueducto.png" alt="" style="min-width: 200px">
             </div>
         </div>
+    </nav>
+
+    <div id="mainContainer">
+        <header class="header"></header>
+
+        <div class="container d-flex justify-content-center align-items-center flex-lg-row flex-md-column">
+            <div class="row" style="padding: 20px">
+                <div class="col-md-8 mb-3">
+                    <h1>Pagos por Cuenta Contrato de la EAAB ESP</h1>
+                    <p>Desde esta aplicación web usted podrá pagar múltiples facturas, financiaciones y/o estados de cuenta en una misma transacción. Si posee una lista de sus cuentas contrato, puede optar por cargarlas una a una mediante el uso del campo "Cuenta Contrato" o a través de un archivo de Excel XLSX.</p>
+                </div>
+                <div class="col-md-4">
+                    <button class="btn button-indivi startButton">Pago de factura individual</button>
+                    <button class="btn button-indivi startButton">Pago de varias facturas</button>
+                </div>
+            </div>
+        </div>
+
     </div>
-    <footer id="contacto">
-        &copy; 2025 Seguros SOAT Colombia. Todos los derechos reservados.
-    </footer>
+
+    <script>
+        $(".startButton").click(function () {
+            $("#mainContainer").hide();
+            $("#paymentContainer").show();
+
+            myModal.show();
+            $("#modalText").text("Estimado usuario, por favor verifique que el número de cuenta contrato que va a digitar corresponda a la de su predio. Una vez consultada la información, verifique que la dirección del predio también corresponda.");
+        });
+    </script>
+
+    <div class="container" id="paymentContainer" style="display: none;">
+        <h1 class="h1 mt-3 mb-3 title">Pagos por Cuenta Contrato de la EAAB ESP</h1>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-3 row-cols-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-droplet" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M7.21.8C7.69.295 8 0 8 0c.109.363.234.708.371 1.038.812 1.946 2.073 3.35 3.197 4.6C12.878 7.096 14 8.345 14 10a6 6 0 0 1-12 0C2 6.668 5.58 2.517 7.21.8zm.413 1.021A31.25 31.25 0 0 0 5.794 3.99c-.726.95-1.436 2.008-1.96 3.07C3.304 8.133 3 9.138 3 10a5 5 0 0 0 10 0c0-1.201-.796-2.157-2.181-3.7l-.03-.032C9.75 5.11 8.5 3.72 7.623 1.82z" />
+                        <path fill-rule="evenodd" d="M4.553 7.776c.82-1.641 1.717-2.753 2.093-3.13l.708.708c-.29.29-1.128 1.311-1.907 2.87l-.894-.448z" />
+                    </svg>
+                    <label for="contractAccount" class="form-label label-text">&nbsp;Cuenta Contrato</label>
+                    <div class="input-group mb-3 row-cols-auto">
+                        <input type="text" id="contractAccount" class="form-control" placeholder="Cuenta Contrato">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="mb-3 row-cols-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cash-coin" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0z" />
+                        <path d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1h-.003zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195l.054.012z" />
+                        <path d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083c.058-.344.145-.678.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1H1z" />
+                        <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 5.982 5.982 0 0 1 3.13-1.567z" />
+                    </svg>
+
+                    <label for="file" class="form-label label-text">&nbsp;Tipo de Deuda</label>
+                    <select class="form-select" id="type">
+                        <option value="0">Factura de Acueducto, Alcantarillado y Aseo Únicamente</option>
+                        <option value="1">Estados de Cuenta Únicamente</option>
+                        <option value="2">Cuotas de Financiaciones Solicitadas Únicamente</option>
+                        <option value="3">Todo</option>
+                    </select>
+                </div>
+            </div>
+            <div class="h-captcha" data-sitekey="ES_b8e314169f9e419dbd6ef2fc99a14492" data-callback="enableBtn"></div>
+            <div class="d-grid gap-2 mb-3">
+                <button class="btn btn-secondary" type="button" id="btnAddAccount" disabled>Antes de continuar resuelva el captcha</button>
+            </div>
+
+            <!--
+            <div class="col-md-4">
+                <div class="mb-3 row-cols-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-spreadsheet icon-text" viewBox="0 0 16 16">
+                        <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V9H3V2a1 1 0 0 1 1-1h5.5v2zM3 12v-2h2v2H3zm0 1h2v2H4a1 1 0 0 1-1-1v-1zm3 2v-2h3v2H6zm4 0v-2h3v1a1 1 0 0 1-1 1h-2zm3-3h-3v-2h3v2zm-7 0v-2h3v2H6z" />
+                    </svg>
+
+
+                    <label for="file" class="form-label label-text">&nbsp;Cargar Desde Archivo XLSX</label>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="El archivo debe incluir una cuenta contrato por celda. No es relevante si están en filas o en columnas.">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                        <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z" />
+                    </svg>
+
+                    <script>
+                        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+                        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+                    </script>
+
+                    <input type="file" id="file" class="form-control" placeholder="Desde Archivo de Excel" accept=".xlsx">
+                </div>
+
+            </div>
+            -->
+
+
+
+
+        </div>
+
+        <input type="file" id="file" placeholder="Desde Archivo de Excel" accept=".xlsx" style="display: none;">
+        Si desea pagar múltiples cuentas contrato, también puede subir un archivo de Excel XLSX con hasta 100 cuentas que debe contener una cuenta contrato en cada celda. Para seleccionar el archivo  <a id='validaCaptcha'>resuelva el captcha .</a>
+
+        <script>
+            $("#fileUploadShortcut").click(function () {
+                $("#file").click();
+                return false;
+            });
+        </script>
+
+        <div class="d-flex justify-content-center">
+            <div class="spinner-border text-primary" role="status" id="loading-image" style="display: none;">
+                <span class="sr-only"></span>
+            </div>
+        </div>
+
+
+        <div id="installmentPlanTableContent"></div>
+        <div id="tableContent"></div>
+        <div id="paymentTotal"></div>
+
+        <div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" id="myModal">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Pagos por Cuenta Contrato de la EAAB ESP</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="closemodal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modalText"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="closemodalBtn">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" id="modalLoad">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content transparecia-modal">
+
+                    <div class="modal-body text-center ">
+              
+                        <img src="https://pagos.acueducto.com.co/img/acueducro-logo.png" alt="" class="img-fluid img-animation-load">
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <script>
+
+        var myModalLoad = new bootstrap.Modal(document.getElementById('modalLoad'), {});
+        function enableBtn() {
+
+            if (hcaptcha.getResponse() != '' && contractAccount.value != "") {
+                document.getElementById("btnAddAccount").disabled = false;
+                document.getElementById("btnAddAccount").className = "btn btn-primary";
+                document.getElementById("btnAddAccount").textContent = "Agregar »";
+            }
+            if (hcaptcha.getResponse() != '') {
+                document.getElementById("validaCaptcha").innerHTML = "el archivo haga clic <a href='index.html' id='fileUploadShortcut'>aquí</a>.";
+                $("#fileUploadShortcut").click(function () {
+                    $("#file").click();
+                    return false;
+                });
+
+            }
+        }
+
+        myModalLoad.hide();
+        /* $('#loading-image').hide();*/
+        var myModal = new bootstrap.Modal(document.getElementById('myModal'), {});
+        var ip = "";
+        var reCaptchaResponse = "";
+
+        //$.getJSON('https://enccompany.com/ip.php', function (data) {
+        //    console.log(data);
+        //    ip = data.ip;
+        //});
+        //$.getJSON('https://enccompany.com/ip.php', function (data) {
+        //    console.log(data);
+        //    ip = data.ip;
+        //});
+
+        //fetch('https://api.ipify.org?format=json')
+        //    .then(response => response.json())
+        //    .then(data => {
+        //        console.log('Your Public IP Address:', data.ip);
+        //        ip = data.ip
+        //    })
+        //    .catch(error => {
+        //        console.error('Error fetching IP:', error);
+        //        myModal.show();
+        //        $("#modalText").text("No se pudo obtener la ip pública del dispositivo");
+        //    });
+
+
+
+        $("#file").on('change', function () {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                var data = e.target.result;
+                var wb = XLSX.read(data, { type: 'binary' });
+                //console.log(wb.Sheets[wb.SheetNames[0]]);
+                console.log(wb.length);
+
+                /*
+                $.each(wb.Sheets, function(i, sheet) {
+                    var possibleContractAccount = text.t;
+
+                    console.log(possibleContractAccount);
+
+                    if (!isNaN(possibleContractAccount) && possibleContractAccount !== "") {
+                        try {
+                            getData(possibleContractAccount);
+                        } catch (exception) {
+                            console.log(exception);
+                        }
+                    }
+                });
+                */
+                var cuentaCC = 0;
+                $.each(wb.Sheets, function (sheetName, sheet) {
+                    $.each(sheet, function (cellName, cell) {
+                        if (!cellName.includes("!")) {
+                            var possibleContractAccount = cell.v;
+                            if (!isNaN(possibleContractAccount) && possibleContractAccount !== "") {
+                                cuentaCC = cuentaCC + 1;
+                            }
+                        }
+                    });
+                });
+                if (cuentaCC <= 100) {
+
+
+                    let pendingTasks = 0;
+                    let allTasksCompleted = new Promise((resolve, reject) => {
+                        $.each(wb.Sheets, function (sheetName, sheet) {
+                            $.each(sheet, function (cellName, cell) {
+                                if (!cellName.includes("!")) {
+                                    var possibleContractAccount = cell.v;
+                                    if (!isNaN(possibleContractAccount) && possibleContractAccount !== "") {
+                                        console.log(cellName + " " + cell.v);
+
+                                        pendingTasks++;
+                                        getData(cell.v).then(() => {
+                                            pendingTasks--;
+                                            if (pendingTasks === 0) {
+                                                console.log(pendingTasks);
+                                            }
+                                        }).catch((error) => {
+                                            pendingTasks--;
+                                            if (pendingTasks === 0) {
+                                                console.log(pendingTasks);
+                                            }
+                                            console.error("Error fetching data: ", error);
+                                        });
+                                    }
+                                }
+                            });
+                        })
+                    });
+                    console.log(pendingTasks);
+                    allTasksCompleted.then(() => {
+
+
+                        myModalLoad.hide();
+                    });
+
+
+
+
+                    reCaptchaResponse = hcaptcha.getResponse();
+
+                }
+                else {
+                    myModal.show();
+                    $("#modalText").text("Recuerde que el numero máximo de cuentas a subir es de 100. Ajuste el documento de Excel e intente nuevamente");
+                    return;
+                }
+
+
+
+
+
+
+
+                pendingTasks = 0;
+                let allTasksCompleted2 = new Promise((resolve, reject) => {
+                    $.each(wb.Sheets, function (sheetName, sheet) {
+                        $.each(sheet, function (cellName, cell) {
+                            if (!cellName.includes("!")) {
+                                var possibleContractAccount = cell.v;
+                                if (!isNaN(possibleContractAccount) && possibleContractAccount !== "") {
+                                    console.log(cellName + " " + cell.v);
+
+                                    pendingTasks++;
+                                    getData(cell.v).then(() => {
+                                        pendingTasks--;
+                                        if (pendingTasks === 0) {
+                                            console.log(pendingTasks);
+                                        }
+                                    }).catch((error) => {
+                                        pendingTasks--;
+                                        if (pendingTasks === 0) {
+                                            console.log(pendingTasks);
+                                        }
+                                        console.error("Error fetching data: ", error);
+                                    });
+                                }
+                            }
+                        });
+                    });
+                });
+                allTasksCompleted2.then(() => {
+
+
+                    myModalLoad.hide();
+                });
+                hcaptcha.reset();
+            };
+
+            // Tell JS To Start Reading The File.. You could delay this if desired
+            reader.readAsBinaryString(this.files[0]);
+
+            /*
+            getBase64(this.files[0]).then(
+                data => console.log(data)
+            );
+            */
+        });
+
+        function getBase64(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = () => resolve(reader.result);
+                reader.onerror = error => reject(error);
+            });
+        }
+
+        function updateInstallmentPlanTable() {
+            $("#installmentPlanTableContent").empty();
+
+            if (allData.installmentPlans.length === 0) {
+                return;
+            }
+
+            var table = `
+                <div class="table-responsive panel">
+                    <table class="table" id="installmentPlans">
+                        <thead>
+                        <tr>
+                            <th>Cuenta Contrato</th>
+                            <th>Identificador de Financiación</th>
+                            <th>Cuotas a Pagar</th>
+                            <th>Calcular</th>
+                            <th>Borrar</th>
+                        </tr>
+                        </thead>
+                        <tbody/>
+                    </table>
+                </div>
+            `;
+
+            $("#installmentPlanTableContent").append(table);
+
+            $.each(allData.installmentPlans, function (i, item) {
+                $("#installmentPlans tbody").append(`
+                    <tr>
+                        <td>${item.contractAccount}</td>
+                        <td><select class="form-select" id="CA${item.contractAccount}_PLANS"></select></td>
+                        <td><select class="form-select" id="CA${item.contractAccount}_QUANTITY"></select></td>
+                        <td><button class="btn btn-outline-primary" id="CA${item.contractAccount}_SEND">Calcular y Agregar &raquo;</button></td>
+                        <td>
+                            <svg style="cursor:pointer" id="delete_${item.contractAccount}" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+                              <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
+                            </svg>
+                        </td>
+                    </tr>
+                `);
+
+                $(`#delete_${item.contractAccount}`).click(function () {
+                    removeDataInstallmentPlan(item.contractAccount);
+                });
+
+                $.each(item.installmentPlans, function (i, installmentPlan) {
+                    $(`#CA${item.contractAccount}_PLANS`).append(new Option(`${installmentPlan.identificador_financiacion} (${convertToCOPCurrency(installmentPlan.valor)} en ${installmentPlan.cuotas_pendientes} cuotas)`, i));
+                });
+
+                $(`#CA${item.contractAccount}_PLANS`).change(function () {
+                    var quantity = item.installmentPlans[$(this).val()].cuotas_pendientes;
+
+                    $(`#CA${item.contractAccount}_QUANTITY`).empty();
+
+                    for (var i = 1; i <= quantity; i++) {
+                        $(`#CA${item.contractAccount}_QUANTITY`).append(new Option(`${i} ${i == 1 ? "cuota" : "cuotas"}`, i));
+                    }
+                });
+
+                $(`#CA${item.contractAccount}_PLANS`).change();
+
+                $(`#CA${item.contractAccount}_SEND`).click(function () {
+                    var quantity = $(`#CA${item.contractAccount}_QUANTITY`).val();
+                    var installmentPlanIndex = $(`#CA${item.contractAccount}_PLANS`).val();
+                    var installmentPlan = item.installmentPlans[installmentPlanIndex].identificador_financiacion;
+                    var contractAccount = item.contractAccount;
+                    const reCaptchaResponse = hcaptcha.getResponse();
+                    console.log(`Sending away ${quantity} of ${item.installmentPlans[installmentPlanIndex].cuotas_pendientes} quotas for installment plan ${installmentPlan} (Contract Account ${contractAccount})`);
+
+                    $.ajax({
+                        url: `HandlerGou.ashx`,
+                        type: 'POST',
+                        data: JSON.stringify({ "action": "createInstallmentPlanRows", "contractAccount": contractAccount, "installmentPlan": installmentPlan, "quantity": quantity, "reCaptchaResponse": reCaptchaResponse }),
+                        contentType: 'application/json; charset=utf-8',
+                        dataType: 'json',
+                        async: true,
+                        success: function (response) {
+                            console.log(response);
+
+                            var targetItem = [];
+
+                            $.each(allData.invoices, function (i, item) {
+                                if (item.contractAccount === contractAccount && item.type === 'Financiación') {
+                                    targetItem = item;
+                                }
+                            });
+
+                            removeData(targetItem);
+
+                            getData(contractAccount);
+
+
+                        },
+                        error: function (xhr, ajaxOptions, thrownError) {
+                            console.log(xhr);
+                            console.log(ajaxOptions);
+                            console.log(thrownError);
+                        }
+                    });
+                });
+            });
+        }
+
+        function updateTable() {
+            $("#tableContent").empty();
+            calculatePaymentTotal();
+
+            if (allData.invoices.length === 0) {
+                return;
+            }
+
+            var table = `
+                <br/>
+
+                <div class="form-check form-switch mb-3">
+                  <input class="form-check-input" type="checkbox" role="switch" id="afs">
+                  <label class="form-check-label"><b>Seleccionar Todo</b></label>
+                </div>
+
+                <div class="table-responsive panel">
+                    <table class="table" id="payments">
+                        <thead>
+                        <tr>
+                            <th>Pagar</th>
+                            <th>Inscribir en Factura Virtual</th>
+                            <th>Tipo</th>
+                            <th>Cuenta Contrato</th>
+                            <th>Dirección</th>
+                            <th>Referencia</th>
+                            <th>Fecha de Vencimiento</th>
+                            <th>Fecha de Suspensión</th>
+                            <th>Valor Acueducto y Alcantarillado</th>
+                            <th>Valor Aseo</th>
+                            <th>Valor Total</th>
+                            <th>Estado</th>
+                            <th>Borrar</th>
+                        </tr>
+                        </thead>
+                        <tbody/>
+                    </table>
+                </div>
+            `;
+
+            $("#tableContent").append(table);
+
+            $("#afs").change(function () {
+                $(".afs").prop('checked', this.checked).change();
+            });
+
+            $.each(allData.invoices, function (i, item) {
+                var checked = item.selected ? "checked" : "";
+
+                var validation = "<span style='color:red'>Pago Pendiente</span>";
+
+                if (item.validation !== '') {
+                    if (item.validation.includes("Pendiente")) {
+                        validation = `<span style='color:orange'>${item.validation}</span>`;
+                    } else {
+                        validation = `<span style='color:green'>${item.validation}</span>`;
+                    }
+                }
+
+                var checkbox = "";
+                var checkboxVirtualInvoice = "";
+
+                if (item.validation === '') {
+                    checkbox =
+                        `
+                        <div class="form-check form-switch">
+                          <input class="form-check-input afs" type="checkbox" value="" role="switch" id="line_${i}" ${checked}>
+                          <label class="form-check-label"></label>
+                        </div>
+                    `;
+
+                    checkboxVirtualInvoice =
+                        `
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" value="" role="switch" id="line_vi_${i}">
+                          <label class="form-check-label"></label>
+                        </div>
+                    `;
+                }
+
+                $("#payments tbody").append(`
+                    <tr>
+                        <td>${checkbox}</td>
+                        <td>${checkboxVirtualInvoice}</td>
+                        <td>${item.type}</td>
+                        <td>${item.contractAccount}</td>
+                        <td><span style='color:red'>${item.address}</span></td>
+                        <td>${item.reference}</td>
+                        <td>${item.dueDate}</td>
+                        <td>${item.serviceCutDate}</td>
+                        <td>${convertToCOPCurrency(item.totalWaterAndSewage)}</td>
+                        <td>${convertToCOPCurrency(item.totalWaste + item.totalWasteDue)}</td>
+                        <td>${convertToCOPCurrency(item.total)}</td>
+                        <td><b>${validation}</b></td>
+                        <td>
+                            <svg style="cursor:pointer" id="delete_${i}" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+                              <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
+                            </svg>
+                        </td>
+                    </tr>
+                `);
+
+                $(`#delete_${i}`).click(function () {
+                    removeData(item);
+                });
+
+                $(`#line_${i}`).change(function () {
+                    allData.invoices[i].selected = this.checked;
+                    if (!this.checked) {
+                        $("#afs").prop('checked', false);
+                        $(`#line_vi_${i}`).prop('checked', false);
+                    }
+                    calculatePaymentTotal();
+                });
+
+                $(`#line_vi_${i}`).change(function () {
+                    allData.invoices[i].selectedvi = this.checked;
+                    console.log(allData);
+                });
+            });
+        }
+
+        async function listaBancos() {
+
+
+
+            await fetch('HandlerGou.ashx', {
+
+                method: 'POST',
+                body: JSON.stringify({ "action": "bankList" }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+                .then(response => response.json())
+                .then(data => {
+
+
+                    console.log("Hola si");
+
+
+                    $.each(data, function (i, item) {
+                        $("#bank").append($('<option>', {
+                            value: i === 0 ? "" : item.financialInstitutionCode,
+                            text: i === 0 ? "Seleccione su Banco" : item.financialInstitutionName,
+                            disabled: i === 0,
+                            selected: i === 0
+                        }));
+                    })
+
+
+
+
+
+
+                });
+
+        }
+
+
+        function calculatePaymentTotal() {
+            $("#paymentTotal").empty();
+
+            var total = 0;
+            var conta = 0;
+            $.each(allData.invoices, function (i, item) {
+                if (item.selected) {
+                    total += item.total;
+                }
+            });
+
+            if (total > 0) {
+                $("#paymentTotal").append(`
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-credit-card" viewBox="0 0 16 16">
+                        <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/>
+                        <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/>
+                    </svg>
+                    <label id="paymentMethodTitle" class="form-label label-text">&nbsp;Medio de Pago</label>
+
+                    <div class="form-floating mb-3">
+                        <select class="form-select" id="paymentMethod" required>
+                            <option value="" disabled selected>Seleccione un Método de Pago...</option>
+                            <option value="0">Cuentas de Ahorro o Corriente (Mediante PSE de ACH)</option>
+                           
+                        </select>
+                        <label>Medios de Pago Disponibles</label>
+                    </div>
+
+                    <form id="payee" novalidate>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                          <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
+                        </svg>
+                        <label id="payeeTitle" class="form-label label-text">&nbsp;Datos del Pagador</label>
+                        <div class="form-floating mb-3" id="bankSelector">
+                            <select class="form-select" id="bank" required></select>
+                            <label>Banco</label>
+                        </div>
+                        <div class="row">
+                            <div class="col-md">
+                                <div class="form-floating mb-3">
+                                    <select class="form-select" id="documentType" required>
+
+                                      </select>
+                                    <label>Tipo de Documento</label>
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="documentNumber" placeholder="Número de Documento" required>
+                                    <label>Número de Documento</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md">
+                                <div class="form-floating mb-3">
+                                  <input type="text" class="form-control" id="name" placeholder="Nombres" pattern="[a-zA-ZáéíóúüÁÉÍÓÚÜñÑ' ']+" required>
+                                  <label>Nombres</label>
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="surname" placeholder="Apellidos" pattern="[a-zA-ZáéíóúüÁÉÍÓÚÜñÑ' ']+" required>
+                                    <label>Apellidos</label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md">
+                                <div class="form-floating mb-3">
+                                    <input type="phone" class="form-control" id="phone" placeholder="Teléfono" pattern="[0-9]{10}" required>
+                                    <label>Teléfono</label>
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control" id="email" placeholder="Correo Electrónico" required>
+                                    <label>Correo Electrónico</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-floating mb-3" id="addressField">
+                            <input type="text" class="form-control" id="address" placeholder="Dirección Física" pattern="^.{1,64}$" required>
+                            <label>Dirección Física</label>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md">
+                                <div class="form-check form-switch mb-3">
+                                    <input id="saveForm" class="form-check-input" type="checkbox" role="switch">
+                                    <label class="form-check-label">Guardar mis datos de pago en este equipo</label>
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="form-check form-switch mb-3">
+                                    <input id="saveAccounts" class="form-check-input" type="checkbox" role="switch" checked>
+                                    <label class="form-check-label">Relacionar las cuentas contrato con mi correo electrónico</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <span class="input-group-text form-control" id="basic-addon1">Valor total a pagar ${convertToCOPCurrency(total)}</span>
+
+                        <div id="paymentButtonContainer">
+                            <div class="d-flex justify-content-center text-center">
+                                <img src="https://pagos.acueducto.com.co/pse_1.png" class="img-fluid" id="pay" alt="Haz click aquí para realizar el pago a través de PSE de ACH Colombia" style="cursor:pointer;margin:20px;max-width:350px">
+                            
+                                <div id="gouCointainer">
+                                    <img src="https://pagos.acueducto.com.co/placetopay-logo.png" class="img-fluid" id="payGou" alt="Haz click aquí para realizar el pago con tarjeta de crédito" style="cursor:pointer;margin:20px;max-width:350px">
+                                    <br/>
+                                    <p>Haz clic <a href="https://pagos.acueducto.com.co/faq_gou_pagos.pdf" target="_blank">aquí</a> para ver las preguntas y respuestas frecuentes de Gou Pagos.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                 `);
+
+                document.getElementById('paymentMethodTitle').scrollIntoView();
+                if (document.getElementById("bank") != null) {
+
+                    if (bank.options.length == 0 && conta == 0) {
+                        conta++;
+
+                    }
+                }
+                $("#payee").hide();
+
+                $("#paymentMethod").change(function () {
+                    $("#payee").hide();
+                    listaBancos();
+                    $("#bankSelector").hide();
+                    $("#bank").prop('required', false);
+                    $("#addressField").hide();
+                    $("#address").prop('required', false);
+
+                    $("#pay").hide();
+                    $("#gouCointainer").hide();
+
+                    $("#documentNumber").removeAttr('pattern');
+
+                    if ($("#paymentMethod").val() === "0") {
+
+
+
+
+                        $("#bankSelector").show();
+                        $("#bank").prop('required', true);
+                        $("#addressField").show();
+                        $("#address").prop('required', true);
+                        $("#pay").show();
+
+                        $("#documentType").empty();
+
+                        $("#documentType").append('<option disabled selected value=""> Seleccione su Tipo de Documento</option>');
+                        $("#documentType").append('<option value="CedulaDeCiudadania">Cédula de Ciudadanía</option>');
+                        $("#documentType").append('<option value="NIT">Número de Identificación Tributaria</option>');
+                        $("#documentType").append('<option value="CedulaDeExtranjeria">Cédula de Extranjería</option>');
+                        $("#documentType").append('<option value="TarjetaDeExtranjeria">Tarjeta de Extranjería</option>');
+                        $("#documentType").append('<option value="Pasaporte">Pasaporte</option>');
+                        $("#documentType").append('<option value="DocumentoDeIdentificacionExtranjero">Documento de Identificación Extranjero</option>');
+                    }
+
+                    if ($("#paymentMethod").val() === "1") {
+
+                        if (new Date().getHours() >= 23) {
+                            myModal.show();
+                            $("#modalText").text("El servicio de pagos mediante tarjeta de crédito no está disponible en este momento. Por favor intente más tarde.");
+                            return;
+                        }
+
+                        $("#gouCointainer").show();
+
+                        $("#documentType").empty();
+
+                        $("#documentType").append('<option disabled selected value=""> Seleccione su Tipo de Documento</option>');
+                        $("#documentType").append('<option value="CC">Cédula de ciudadanía</option>');
+                        $("#documentType").append('<option value="CE">Cédula de extranjería</option>');
+                        $("#documentType").append('<option value="TI">Tarjeta de identidad</option>');
+                        $("#documentType").append('<option value="NIT">Número de Identificación Tributaria</option>');
+                        $("#documentType").append('<option value="RUT">Registro único tributario</option>');
+
+                        $("#documentType").change(function () {
+                            switch ($("#documentType").val()) {
+                                case "CC":
+                                    $("#documentNumber").prop('pattern', '^[1-9][0-9]{3,9}$');
+                                    break;
+                                case "CE":
+                                    $("#documentNumber").prop('pattern', '^([a-zA-Z]{1,5})?[1-9][0-9]{3,7}$');
+                                    break;
+                                case "TI":
+                                    $("#documentNumber").prop('pattern', '^[1-9][0-9]{4,11}$');
+                                    break;
+                                case "NIT":
+                                case "RUT":
+                                    $("#documentNumber").prop('pattern', '^[1-9][0-9]{6,9}$');
+                                    break;
+                            }
+                        });
+                    }
+
+                    $("#payee").show();
+
+                    document.getElementById('payeeTitle').scrollIntoView();
+
+                    var saved = getCookie("saved");
+
+                    if (saved) {
+                        $("#saveForm").prop('checked', true);
+
+                        controls.forEach(function (control) {
+                            var controlValue = getCookie(control);
+                            if ($(`#${control}`).is('select')) {
+                                if ($(`#${control} option[value='${controlValue}']`).length != 0) {
+                                    $(`#${control}`).val(controlValue);
+                                }
+                            } else {
+                                $(`#${control}`).val(controlValue);
+                            }
+                        });
+                    }
+                });
+
+                $("#pay").click(function () {
+                    var form = document.getElementById("payee");
+
+                    form.classList.add('was-validated');
+
+                    if (!form.checkValidity()) {
+                        return;
+                    }
+
+                    $("#paymentButtonContainer").hide();
+
+                    var allEncodedData = [];
+                    var selectedEncodedData = [];
+
+                    allData.invoices.forEach(function (item) {
+                        allEncodedData.push(item.enc);
+
+                        if (item.selected) {
+                            var encodedWithAdditionals = { "encodedData": item.enc, "virtualInvoice": item.selectedvi };
+                            selectedEncodedData.push(encodedWithAdditionals);
+                        }
+                    });
+
+                    console.log(allEncodedData);
+                    console.log(selectedEncodedData);
+
+                    var save = $("#saveForm").is(':checked');
+
+                    if (save) {
+                        setCookie("saved", save, save);
+                    } else {
+                        setCookie("saved", "", false);
+                    }
+
+                    var jObject = {
+                        "action": "createPayment",
+                        "allEncodedData": allEncodedData,
+                        "selectedEncodedData": selectedEncodedData,
+                        "ip": ip,
+                        "saveAccounts": $("#saveAccounts").is(':checked')
+                    }
+
+                    controls.forEach(function (control) {
+                        setCookie(control, $(`#${control}`).val(), save);
+                        jObject[control] = $(`#${control}`).val();
+                    });
+
+                    console.log(jObject);
+
+                    $.ajax({
+                        url: `HandlerGou.ashx`,
+                        type: 'POST',
+                        data: JSON.stringify(jObject),
+                        contentType: 'application/json; charset=utf-8',
+                        dataType: 'json',
+                        async: true,
+                        success: function (response) {
+                            console.log(response);
+                            if (response.error === "") {
+                                window.location.href = response.url;
+                            } else {
+                                myModal.show();
+                                $("#modalText").text(response.error);
+                            }
+                        },
+                        error: function (xhr, ajaxOptions, thrownError) {
+                            console.log(xhr);
+                            console.log(ajaxOptions);
+                            console.log(thrownError);
+
+                            myModal.show();
+                            $("#modalText").text("Ocurrió un error al enviar la solicitud. Intente de nuevo más tarde.");
+                            $("#paymentButtonContainer").show();
+                        },
+                        complete: function (data) {
+
+                        }
+                    });
+                });
+
+                $("#payGou").click(function () {
+                    var form = document.getElementById("payee");
+
+                    form.classList.add('was-validated');
+
+                    if (!form.checkValidity()) {
+                        return;
+                    }
+
+                    $("#paymentButtonContainer").hide();
+
+                    var allEncodedData = [];
+                    var selectedEncodedData = [];
+
+                    allData.invoices.forEach(function (item) {
+                        allEncodedData.push(item.enc);
+
+                        if (item.selected) {
+                            var encodedWithAdditionals = { "encodedData": item.enc, "virtualInvoice": item.selectedvi };
+                            selectedEncodedData.push(encodedWithAdditionals);
+                        }
+                    });
+
+                    console.log(allEncodedData);
+                    console.log(selectedEncodedData);
+
+                    var save = $("#saveForm").is(':checked');
+
+                    if (save) {
+                        setCookie("saved", save, save);
+                    } else {
+                        setCookie("saved", "", false);
+                    }
+
+                    var jObject = {
+                        "action": "createPaymentGou",
+                        "allEncodedData": allEncodedData,
+                        "selectedEncodedData": selectedEncodedData,
+                        "ip": ip,
+                        "saveAccounts": $("#saveAccounts").is(':checked')
+                    }
+
+                    controls.forEach(function (control) {
+                        setCookie(control, $(`#${control}`).val(), save);
+                        jObject[control] = $(`#${control}`).val();
+                    });
+
+                    console.log(jObject);
+
+                    $.ajax({
+                        url: `HandlerGou.ashx`,
+                        type: 'POST',
+                        data: JSON.stringify(jObject),
+                        contentType: 'application/json; charset=utf-8',
+                        dataType: 'json',
+                        async: true,
+                        success: function (response) {
+                            console.log(response);
+                            if (response.error === "") {
+                                window.location.href = response.url;
+                            } else {
+                                myModal.show();
+                                $("#modalText").text(response.error);
+                            }
+                        },
+                        error: function (xhr, ajaxOptions, thrownError) {
+                            console.log(xhr);
+                            console.log(ajaxOptions);
+                            console.log(thrownError);
+
+                            myModal.show();
+                            $("#modalText").text("Ocurrió un error al enviar la solicitud. Intente de nuevo más tarde.");
+                            $("#paymentButtonContainer").show();
+                        },
+                        complete: function (data) {
+
+                        }
+                    });
+                });
+            }
+        }
+
+        var controls = ["name", "surname", "phone", "email", "documentType", "documentNumber", "address", "bank"];
+        console.log(document.cookie);
+
+        controls.forEach(function (control) {
+            console.log(getCookie(control));
+        });
+
+        function getCookie(name) {
+            name = `${name}=`;
+
+            var cookies = document.cookie.split(";");
+            var value = "";
+
+            cookies.forEach(function (cookie) {
+                cookie = cookie.trim();
+                if (cookie.startsWith(name)) {
+                    value = cookie.replace(name, "");
+                }
+            });
+
+            return value;
+        }
+
+        function setCookie(name, value, save) {
+            if (save) {
+                document.cookie = `${name}=${value}; expires=Tue, 19 Jan 2038 04:14:07 GMT`;
+            } else {
+                document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC`;
+            }
+        }
+
+        $('#contractAccount').keyup(function (event) {
+            var keycode = (event.keyCode ? event.keyCode : event.which);
+            if (keycode == '13') {
+                $("#btnAddAccount").click();
+            }
+            console.log(contractAccount.value);
+            enableBtn();
+        });
+
+        $("#btnAddAccount").click(function () {
+
+            //API returned true
+
+            var valCookie = getCookie("Visita");
+            reCaptchaResponse = hcaptcha.getResponse();
+            var identifier = $("#contractAccount").val();
+            if (valCookie == null) {
+                myModal.show();
+                $("#modalText").text("Su tiempo de sesión se ha agotado por inactividad.");
+                shouldAdd = false;
+                $('#closemodal').click(function () {
+                    window.location.reload();
+                });
+                $('#closemodalBtn').click(function () {
+                    window.location.reload();
+                });
+
+            }
+            else if (reCaptchaResponse === '' || reCaptchaResponse == null || identifier === "") {
+                myModal.show();
+                $("#modalText").text("Estimado usuario, verifique que el captcha o su cuenta contrato esten debidamente diligenciadas");
+
+
+            }
+            else {
+
+                getData($("#contractAccount").val());
+                hcaptcha.reset();
+                $("#contractAccount").val("");
+            }
+
+        });
+
+        /*
+        $("#contractAccount").amsifySuggestags({
+            type: 'amsify',
+            afterAdd: function (value) {
+                console.info(value + " added"); // Parameter will be value
+                getData(value);
+            },
+            afterRemove: function (value) {
+                console.info(value + " removed"); // Parameter will be value
+                removeData(value);
+            },
+            noSuggestionMsg: 'Presione enter o coma para añadir la cuenta contrato'
+        });
+        */
+
+        var allData = [];
+        allData.invoices = [];
+        allData.installmentPlans = [];
+
+        function removeData(target) {
+            var index = -1;
+
+            $.each(allData.invoices, function (i, item) {
+                if (item.type === target.type && item.contractAccount === target.contractAccount) {
+                    index = i;
+                }
+            });
+
+            if (index != -1) {
+                allData.invoices.splice(index, 1);
+            }
+
+            updateTable();
+        }
+
+        function removeDataInstallmentPlan(identifier) {
+            var index = [];
+            $.each(allData.installmentPlans, function (i, item) {
+                if (parseInt(item.contractAccount) === parseInt(identifier)) {
+                    index.push(i);
+                }
+            });
+
+            for (var i = index.length - 1; i >= 0; i--) {
+                allData.installmentPlans.splice(index[i], 1);
+            }
+
+            updateInstallmentPlanTable();
+        }
+        var NumTareas = 0;
+        function sleep (ms) {
+
+            return new Promise(resolve => { setTimeout(resolve, ms)
+
+            
+
+        });
+
+
+        }
+        function getData(identifier) {
+
+            myModalLoad.show();
+            return new Promise((resolve, reject) => {
+
+                NumTareas++;
+
+                $.ajax({
+                    url: `HandlerGou.ashx`,
+                    type: 'POST',
+                    dataType: 'json',
+                    data: JSON.stringify({ "action": "getData", "identifier": identifier, "type": $("#type").val(), "reCaptchaResponse": reCaptchaResponse }),
+                    contentType: 'application/json; charset=utf-8',
+                    async: true,
+                    success: function (response) {
+                        console.log(response);
+
+                        response.invoices.forEach(function (item) {
+                            var shouldAdd = true;
+
+                            allData.invoices.forEach(function (item2) {
+                                if (item.contractAccount === item2.contractAccount && item.type === item2.type) {
+                                    shouldAdd = false;
+                                }
+                            });
+
+                            if (item.error !== "") {
+                                myModal.show();
+                                $("#modalText").text(item.error);
+                                shouldAdd = false;
+                            }
+
+                            if (shouldAdd) {
+                                allData.invoices = allData.invoices.concat(item);
+                                updateTable();
+                            }
+
+                            if (allData.invoices.length == 1) {
+                                $("#afs").prop('checked', true).change();
+                            } else {
+                                $("#afs").prop('checked', false).change();
+                            }
+                        });
+
+                        response.installmentPlans.forEach(function (item) {
+                            var shouldAdd = true;
+
+                            allData.installmentPlans.forEach(function (item2) {
+                                if (item.contractAccount === item2.contractAccount) {
+                                    shouldAdd = false;
+                                }
+                            });
+
+                            if (shouldAdd) {
+                                allData.installmentPlans = allData.installmentPlans.concat(item);
+                                updateInstallmentPlanTable();
+                            }
+                        });
+                        //hcaptcha.reset();
+
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        console.log(xhr);
+                        console.log(ajaxOptions);
+                        console.log(thrownError);
+
+                    },
+                    complete: function () {
+                        NumTareas--;
+                       
+                        document.getElementById("btnAddAccount").disabled = true;
+                        document.getElementById("btnAddAccount").className = "btn btn-secondary";
+                        document.getElementById("btnAddAccount").textContent = "Antes de agregar otra cuenta resuelva el captcha";
+                        if (NumTareas === 0) {
+                            showModalWithDelay();
+                            console.log("cerrar gif");
+                            console.log("tiempo");
+                            myModalLoad.hide();
+                        }
+                    }
+                });
+            });
+        }
+        function showModalWithDelay () {
+            myModalLoad.show();
+            setTimeout(() => {
+                myModalLoad.hide();
+            }, 1500); // Espera 2 segundos antes de cerrar el modal
+        }
+
+        function convertToCOPCurrency(value) {
+            var valueArray = value.toString().split("").reverse();
+            var result = "";
+            var count = 0;
+            var isDot = true;
+            for (var i = 0; i < valueArray.length; i++) {
+                count++;
+                result += valueArray[i];
+
+                if (count === 3 && i !== valueArray.length - 1) {
+                    result += isDot ? `.` : `'`;
+                    isDot = !isDot;
+                    count = 0;
+                }
+            }
+
+            return "$" + result.split("").reverse().join("");
+        }
+
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+
+        if (urlParams.get('cc') != null) {
+            $("#mainContainer").hide();
+            $("#paymentContainer").show();
+
+            //if (urlParams.get('paymentType') != null) {
+            //    document.getElementById("type").value = urlParams.get('paymentType');
+            //} else {
+            //    document.getElementById("type").value = 3;
+            //}
+            //reCaptchaResponse = hcaptcha.getResponse();
+            //getData(urlParams.get('cc'));
+            //hcaptcha.reset();
+
+            urlParams.get('cc');
+            document.getElementById("contractAccount").value = urlParams.get('cc');
+
+        }
+
+
+        function getCookie(name) {
+            var dc = document.cookie;
+            var prefix = name + "=";
+            var begin = dc.indexOf("; " + prefix);
+            if (begin == -1) {
+                begin = dc.indexOf(prefix);
+                if (begin != 0) return null;
+            }
+            else {
+                begin += 2;
+                var end = document.cookie.indexOf(";", begin);
+                if (end == -1) {
+                    end = dc.length;
+                }
+            }
+            // because unescape has been deprecated, replaced with decodeURI
+            //return unescape(dc.substring(begin + prefix.length, end));
+            return decodeURI(dc.substring(begin + prefix.length, end));
+        }
+
+    </script>
 </body>
 </html>
